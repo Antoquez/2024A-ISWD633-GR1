@@ -59,7 +59,7 @@ docker run --name srv-web2 nginx:alpine
 ```
 
 **¿Qué sucede luego de la ejecución del comando?**
-# COMPLETAR  
+Se queda inutilizable la línea de comando.
 
 Cuando ejecutas un contenedor en primer plano sin la opción -d (modo detach), el contenedor captura la entrada estándar (stdin) del terminal, lo que significa que el terminal queda "atrapado" y no puedes introducir más comandos hasta que detengas el contenedor.
 
