@@ -15,16 +15,19 @@ docker run -d --name contenedorprueba -e username -e rol=admin nginx:alpine
 ![Imagen](imagenes/variablesentorno.PNG)
 
 ### Crear un contenedor con mysql:8 , mapear todos los puertos
-# COMPLETAR
+```
+docker run -P -d --name contenedorPrueba mysql:8 
+```
+### ¿El contenedor se está ejecutando?  
+si
 
-### ¿El contenedor se está ejecutando?
-# COMPLETAR
-
-### Identificar el problema
-# COMPLETAR
+### Identificar el problema  
+Database is uninitialized and password option is not specified
 
 ### Eliminar el contenedor creado con mysql:8 
-# COMPLETAR
+```
+docker rm -f contenedorPrueba
+```
 
 ### Para crear un contenedor con variables de entorno especificadas
 - Portabilidad: Las aplicaciones se vuelven más portátiles y pueden ser desplegadas en diferentes entornos (desarrollo, pruebas, producción) simplemente cambiando el archivo de variables de entorno.
@@ -41,9 +44,20 @@ docker run -d --name <nombre contenedor> --env-file=<nombreArchivo>.<extensión>
 Es necesario especificar la ruta absoluta del archivo si este se encuentra en una ubicación diferente a la que estás ejecutando el comando docker run.
 
 ### Crear un contenedor con mysql:8 , mapear todos los puertos y configurar las variables de entorno mediante un archivo
-# COMPLETAR
-
-# CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR 
+```
+docker run -P -d --name contenedorPrueba --env-file=C:\Users\LabP3E010\Downloads\variablesEntorno.txt mysql:8
+```
+![Imagen](imagenes/evidenciavariable.PNG)
 
 ### ¿Qué bases de datos existen en el contenedor creado?
-# COMPLETAR
+Existe information_schema y performance_schema y 4 rows in set.  
+comandos usados
+```
+docker run -d --name <nombre contenedor> --env-file=<nombreArchivo>.<extensión> <nombre imagen>
+```
+```
+mysql -u root -p
+```
+```
+show databases;
+```
