@@ -6,27 +6,32 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 ```
 
 ### Crear un volumen tipo host con la imagen nginx:alpine, para la ruta carpeta host: directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html esta ruta se obtiene al revisar la se obtiene desde la documentación
-![Volúmenes](imagenes/volumen-host.PNG)
-# COMPLETAR CON EL COMANDO
+![Volúmenes](imagenes/volumen-host.PNG)  
+  
+```
+docker run -d --name contenedorprueba -p 120:80 -v html:/usr/share/nginx/html nginx:alpine
+```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+se encuentra una pantalla que refleja un error 403.
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+No existe tal archivo
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de nginx/html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Se abre el archivo index.html que se guardo en la carpeta del host
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+```
+docker rm -f contenedorprueba
+```
 
 ### ¿Qué sucede al crear nuevamente el mismo contenedor con volumen de tipo host a los directorios definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+De esta forma tenemos acceso a los directorios especificados del contenedor desde nuestra máquina host
 
 ### ¿Qué hace el comando pwd?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+Muestra la ruta completa del directorio actual en la consola.
 Si quieres incluir el comando pwd dentro de un comando de Docker, lo puedes hacer de diferentes maneras dependiendo del shell que estés utilizando.
 
 
